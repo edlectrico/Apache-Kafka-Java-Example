@@ -1,4 +1,4 @@
-# Apache-Kafka-Example
+# Apache Kafka Example with Java
 A simple Java example of how Apache Kafka works sending integer messages to a topic.
 
 ## Requisites: 
