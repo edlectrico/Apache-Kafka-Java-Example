@@ -58,4 +58,17 @@ javac -cp "path_to_kafka/libs/*" path_to_class/SimpleConsumer.java
 java -cp .:"path_to_kafka/libs/*" path_to_class/SimpleConsumer <topic_name>
 ```  
 
+## Operating with the ConsumerGroup
+A consumer group is a multi-threaded consumption from Kafka topics. By adding more threads Kafka will rebalance itself.
+Execution steps:
+```{r, engine='bash', javac}
+javac -cp "path_to_kafka/libs/*" path_to_class/ConsumerGroup.java
+```  
+```{r, engine='bash', java}
+java -cp .:"path_to_kafka/libs/*" path_to_class/ConsumerGroup <topic_name> <my-group>
+``` 
+We can execute these scripts using more groups. If the group is the same, then we will create different consumers listening to the same topic.
+
+
+
 Some of this work comes from the Kafka Introduction in https://www.tutorialspoint.com/apache_kafka/apache_kafka_quick_guide.htm
