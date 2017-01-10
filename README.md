@@ -6,21 +6,20 @@ A simple Java example of how Apache Kafka works sending integer messages to a to
   2. [Apache Kafka](https://kafka.apache.org/downloads.html) must be also installed (too obvious)
 
 Before executing this class we must:
-
-  1. Launch Zookeeper: 
+  1. Launch Zookeeper.
+  2. Launch a Kafka broker.
+  3. Create a topic.
+  
 ```{r, engine='bash', launch_zookeeper}
 ./path_to_kafka/bin/zookeeper-server-start.sh path_to_kafka/config/zookeeper.properties 
 ```  
-  2. Launch a Kafka broker: 
 ```{r, engine='bash', launch_kafka_broker}
 ./path_to_kafka/bin/kafka-server-start.sh path_to_kafka/config/server.properties 
 ``` 
-  3. Create a topic: 
 ```{r, engine='bash', launch_kafka_broker}
 ./path_to_kafka/bin/kafka-topic.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>
 ```
 ## Operating with the Producer
-
 Execution steps:
 ```{r, engine='bash', javac}
 javac -cp "path_to_kafka/libs/*" path_to_class/SimpleProducer.java
