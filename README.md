@@ -6,13 +6,19 @@ Requisites:
   2. Kafka must be also installed (too obvious)
 
 Before executing this class we must:
-  1. Launch Zookeeper: 
-     ./path_to_kafka/bin/zookeeper-server-start.sh path_to_kafka/config/zookeeper.properties
-  2. Launch a Kafka broker: 
-     ./path_to_kafka/bin/kafka-server-start.sh path_to_kafka/config/server.properties
-  3. Create a topic: 
-     ./path_to_kafka/bin/kafka-topic.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>
 
+  1. Launch Zookeeper: 
+```{r, engine='bash', launch_zookeeper}
+./path_to_kafka/bin/zookeeper-server-start.sh path_to_kafka/config/zookeeper.properties 
+```  
+  2. Launch a Kafka broker: 
+```{r, engine='bash', launch_kafka_broker}
+./path_to_kafka/bin/kafka-server-start.sh path_to_kafka/config/server.properties 
+``` 
+  3. Create a topic: 
+```{r, engine='bash', launch_kafka_broker}
+./path_to_kafka/bin/kafka-topic.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic <topic_name>
+```
 Execution steps:
   1. javac -cp "path_to_kafka/libs/*" path_to_class/SimpleProducer.java
   2. java -cp .:"path_to_kafka/libs/*" path_to_class/SimpleProducer <topic_name>
