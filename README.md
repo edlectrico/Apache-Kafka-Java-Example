@@ -2,8 +2,8 @@
 A simple Java example of how Apache Kafka works sending integer messages to a topic.
 
 ## Requisites: 
-  1. Zookeeper must be installed in your system
-  2. Kafka must be also installed (too obvious)
+  1. [Apache Zookeeper](http://apache.rediris.es/zookeeper/) must be installed in your system
+  2. [Apache Kafka](https://kafka.apache.org/downloads.html) must be also installed (too obvious)
 
 Before executing this class we must:
 
